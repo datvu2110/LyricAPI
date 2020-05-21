@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button{
+	cursor: pointer;
+}
+
+button:active{
+	transform: scale(0.95);
+}
+a:link{
+	color: violet;
+}
+a:visited{
+  color:violet;
+}
+
+.error{
+	margin-top: 5%;
+	color: MediumSeaGreen;
+	font-weight: bold;
+  	margin-left: 20%;
+  	margin-right: 20%;
+  	text-decoration: underline;
+}
+.artist-link{
+	font-size: 0.9em;
+}
+.songName{
+	font-size: 0.9em;
+}
+
+audio{
+	height: 20px;
+	width: 130px;
+	margin-bottom:0.5em;
+	margin-top: 0.2em;
+}
+
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    align-items: center;
+    border-bottom: 1px white solid;
+    border-radius: 10px;
+}
+
+.parallax{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+.form-container{
+	width: 70%;
+}
+.form-container h1{
+	margin-bottom: 1em;
+	font-size: 4em;
+	font-family: 'Dancing Script', cursive;
+}
+
+.form-container h1{
+	cursor: pointer;
+}
+
+#submit-form{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+#submit-form input{
+	height: 3em;
+	border-radius: 50px;
+	border: none;
+	text-align: center;
+	font-size: 0.7em;
+	padding-right: 3em;
+}
+
+#submit-form button{
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+	right: 4px;
+	border-radius: 50px;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+	background-color: violet;
+	color: white;
+	font-size: 0.7em;
+}
+.container p{
+	text-align: center;
+}
+.centered{
+	display: flex;
+	justify-content: center;
+}
+
+.songs{
+	list-style-type: none;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+.songs li{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 10px 0;
+}
+.title{
+	font-size: 1.5em;
+	text-align: center;
+	margin-top: 1em;
+}
+
+
+
+.lyrics{
+	margin-right:1em;
+	padding:0.5em;
+	border-radius: 50px;
+	color: white;
+	font-size: 0.7em;
+	background-color: violet;
+}
+.more-btn{
+	margin-right:1em;
+	padding:0.5em;
+	border-radius: 50px;
+	color: white;
+	font-size: 1em;
+	background-color: violet;
+
+}
+.more-btn:hover{
+	cursor: pointer;
+}
+
+.lyric-btn{
+	margin-right:1em;
+	padding-left:1.3em;
+	padding-right: 1.3em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-radius: 50px;
+	color: white;
+	font-size: 0.5em;
+	background-color: violet;
+	
+}
+.lyric-btn:hover{
+	cursor: pointer;
+}
+
+.artist{
+	font-size: 1.2em;
+	text-align: center;
+	margin-bottom: 1em;
+}
+.songLyric{
+	text-align: center;
+}
+
+@media screen and (min-width: 500px){
+	#submit-form input{
+		font-size: 1em;
+	}
+
+
+	#submit-form button{
+		font-size: 1em;
+	}
+
+	.artist-link{
+		font-size: 1.2em;
+	}
+	.songs{
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+	.artist-link{
+		font-size: 1em;
+	}
+	.songName{
+		font-size: 1em;
+	}
+	.lyric-btn{
+		font-size: 0.5em;
+	}
+}
+
+@media screen and (min-width: 700px){
+
+
+	.artist-link{
+		font-size: 1.2em;
+	}
+	.songs{
+		margin-left: 30%;
+		margin-right: 30%;
+	}
+	.lyric-btn{
+		font-size: 0.7em;
+	}
+	.error{
+		font-size: 1.5em;
+	}
+
+}
+
+
