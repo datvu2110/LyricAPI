@@ -56,7 +56,9 @@ function displayResults(songs){
 						<span><strong><a class="artist-link" href="${songs.data[i].artist.link}" target='_blank'>${songs.data[i].artist.name}</a></strong></span> 
 						- <span class="songName">${songs.data[i].title}</span>
 						<div>
-						<audio controls preload='none' controlsList="nodownload" src="${songs.data[i].preview}" type="audio/mpeg">
+						<audio controls>
+							<source src="${songs.data[i].preview}" type="audio/mpeg">
+							Your browser does not support the audio element.
 						</audio></div>
 					</div>
 
