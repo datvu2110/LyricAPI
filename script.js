@@ -55,7 +55,7 @@ function displayResults(songs){
 					<div>
 						<span><strong><a class="artist-link" href="${songs.data[i].artist.link}" target='_blank'>${songs.data[i].artist.name}</a></strong></span> 
 						- <span class="songName">${songs.data[i].title}</span>
-						<div><audio controls preload='auto' class="audio_volume_only"><source src="${songs.data[i].preview}" type='audio/mp3' /></audio></div>
+						<div><audio controls preload='auto' class="audio_volume_only" src="${songs.data[i].preview}"></audio></div>
 					</div>
 
 					<div><button class="get-lyrics lyric-btn" data-artist="${songs.data[i].artist.name}" data-title="${songs.data[i].title}"> Lyrics</button></div>
