@@ -60,7 +60,9 @@ function displayResults(songs){
 						</audio></div>
 					</div>
 
-					<div><button class="get-lyrics lyric-btn" data-artist="${songs.data[i].artist.name}" data-title="${songs.data[i].title}"> Lyrics</button></div>
+					<div><button class="modal-btn get-lyrics lyric-btn" data-artist="${songs.data[i].artist.name}" data-title="${songs.data[i].title}"> Lyrics
+						</button>	
+					</div>
 				</li>
 			`);
 		}
@@ -93,6 +95,15 @@ function getMore(link){
 
 $(document).on("click",".get-lyrics", getLyrics);
 $(document).on("click","#refresh", reloadPage);
+$(document).on("click",".modal-close", modalClose);
+
+function modalClose(e){
+	$('.songTitle').empty();
+	$('.songLyric').empty();
+	$('body').removeClass('modal-open');
+	$('.modal-bg').removeClass('bg-active');
+}
+
 function getLyrics(e){
 	console.log($(this).attr("data-artist"));
 
@@ -104,19 +115,35 @@ function getLyrics(e){
 }
 
 function showLyrics(data, artist,title){
-	$('#result').empty();
-	$('#more').empty();
+	// $('#result').empty();
+	// $('#more').empty();
+	// $('#result').append(`
+	// 	<div class="title">${title} </div>
+	// 	<div class="artist"> ${artist} </div>
+	// 	<div class="songLyric">${lyrics}</div>
+	// `)
+	if (data.error){
+		$('.modal-bg').addClass('bg-active');
+		$('body').addClass('modal-open');
+		$('.songTitle').addClass('error');
+		$('.songTitle').append('No Lyric Found!!');
+	}
 	const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
-	$('#result').append(`
-		<div class="title">${title} </div>
-		<div class="artist"> ${artist} </div>
-		<div class="songLyric">${lyrics}</div>
-	`)
+	$('.modal-bg').addClass('bg-active');
+	$('body').addClass('modal-open');
+	$('.songTitle').append(`
+		${title}
+		`)
+	$('.songLyric').append(`
+		${lyrics}
+		`)
 }
 
 function reloadPage(e){
 	window.location.reload();
 }
+
+
 
 
 
