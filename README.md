@@ -16,5 +16,9 @@ The purpose of the Music Search is to seamlessly retrieve the lyrics of a song w
 
 On the landing page, you can search for a song or a singer to if you would like to know their songs' lyrics.
 <img src="/img/welcomePage.png"> 
-Once the search is submitted, a list of songs will be displayed for you to select
+Once the search is submitted, a list of songs will be displayed for you to select.
 <img src="/img/afterSearch.png">
+If you click the "Lyric" button, a modal will show the lyric of that song. You can click "X" to close the modal.
+<img src="/img/clickLyric.png">
+You also can click the name of the artist know more about them.
+<img src="/img/clickSinger.png">
