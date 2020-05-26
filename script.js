@@ -9,7 +9,6 @@ window.addEventListener("scroll", function(){
 const baseURI = 'https://api.lyrics.ovh' 
 
 $(function() {
-  console.log('App loaded!');
   handleSubmit();
 });
 
@@ -17,7 +16,6 @@ function handleSubmit(){
 	$("#submit-form").on('submit', function(event) {
 		event.preventDefault();
 		const userInput = $('#search').val().trim();
-		console.log(userInput);
 		if (!userInput){
 			alert("Please enter something to search!")
 		}
@@ -34,7 +32,6 @@ function handleSubmit(){
 
 function searchForUserInput(userInput){
 	const URL  = baseURI + "/suggest/" + userInput;
-	console.log(URL);
 	fetch (URL)
 		.then(response=>response.json())
 		.then(responseJson=>displayResults(responseJson));
@@ -48,16 +45,12 @@ function displayResults(songs){
 	else
 	{
 		$('#result').append(`<ul class="songs"></ul>`);
-		console.log(songs.data.length);
 		for (let i =0; i<songs.data.length; i++){
 			$('.songs').append( `
 				<li>
 					<div>
 						<span><strong><a class="artist-link" href="${songs.data[i].artist.link}" target='_blank'>${songs.data[i].artist.name}</a></strong></span> 
 						- <span class="songName">${songs.data[i].title}</span>
-						<div>
-						<audio controls="controls" src="${songs.data[i].preview}">
-						</audio></div>
 					</div>
 
 					<div><button class="modal-btn get-lyrics lyric-btn" data-artist="${songs.data[i].artist.name}" data-title="${songs.data[i].title}"> Lyrics
@@ -75,7 +68,7 @@ function displayResults(songs){
 		$('#more').append(`<button class="more-btn" onClick="getMore('${songs.next}')">Next</button>`)
 	}
 	if(songs.prev){
-		$('#more').append(`<button class="more-btn" onClick="getMore('${songs.next}')">Prev</button>`)
+		$('#more').append(`<button class="more-btn" onClick="getMore('${songs.prev}')">Prev</button>`)
 	}
 	
 }
@@ -84,7 +77,6 @@ function displayResults(songs){
 function getMore(link){
 	$('#result').empty();
 	$('#more').empty();
-	console.log(link);
 	fetch (`https://cors-anywhere.herokuapp.com/${link}`)
 		.then(response=>response.json())
 		.then(responseJson=>displayResults(responseJson));
@@ -105,10 +97,8 @@ function modalClose(e){
 }
 
 function getLyrics(e){
-	console.log($(this).attr("data-artist"));
 
 	const URL  = baseURI + "/v1/" + $(this).attr("data-artist")+"/"+$(this).attr("data-title");
-	console.log(URL);
 	fetch (URL)
 		.then(response=>response.json())
 		.then(responseJson=>showLyrics(responseJson,$(this).attr("data-artist"),$(this).attr("data-title")));

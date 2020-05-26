@@ -13,10 +13,10 @@ button:active{
 	transform: scale(0.95);
 }
 a:link{
-	color: violet;
+	color: #409CD4;
 }
 a:visited{
-  color:violet;
+  color:#409CD4;
 }
 
 .error{
@@ -103,7 +103,7 @@ audio{
 	padding-right: 0.3em;
 	padding-top: 0.3em;
 	padding-bottom: 0.3em;
-	background-color: violet;
+	background-color: #409CD4;
 	color: white;
 	font-size: 0.7em;
 }
@@ -140,7 +140,7 @@ audio{
 	border-radius: 50px;
 	color: white;
 	font-size: 0.7em;
-	background-color: violet;
+	background-color: #409CD4;
 }
 .more-btn{
 	margin-right:1em;
@@ -148,7 +148,7 @@ audio{
 	border-radius: 50px;
 	color: white;
 	font-size: 1em;
-	background-color: violet;
+	background-color: #409CD4;
 
 }
 .more-btn:hover{
@@ -156,6 +156,7 @@ audio{
 }
 
 .lyric-btn{
+	margin-left: 1em;
 	margin-right:1em;
 	padding-left:1.3em;
 	padding-right: 1.3em;
@@ -164,7 +165,7 @@ audio{
 	border-radius: 50px;
 	color: white;
 	font-size: 0.5em;
-	background-color: violet;
+	background-color: #409CD4;
 	
 }
 .lyric-btn:hover{
@@ -258,7 +259,7 @@ audio{
 		font-size: 1em;
 	}
 	.lyric-btn{
-		font-size: 0.5em;
+		font-size: 0.7em;
 	}
 }
 
