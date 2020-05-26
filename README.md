@@ -15,4 +15,4 @@ The purpose of the Music Search is to seamlessly retrieve the lyrics of a song w
 ### User Guide: 
 
 On the landing page, you can search for a song or a singer to if you would like to know their songs' lyrics.
-<img src="/img/afterSearch.png"> 
+<img src="/img/welcomePage.png"> 
