@@ -8,7 +8,7 @@ Technology Used:
 * JavaScript
 * HTML
 * CSS
-*lyrics.ovh API.
+* lyrics.ovh API.
 
 User Guide: 
 
